@@ -118,7 +118,7 @@ function gerarCalendario() {
       diaDoMesDaPascoa = "0" + diaDoMesDaPascoa;
     }
     
-    const domingoPascoa = new Date(`${ano}-${mesDaPascoa}-${diaDoMesDaPascoa}`); 
+    const domingoPascoa = new Date(`${ano}-${mesDaPascoa}-${diaDoMesDaPascoa}T00:00:00`); 
     let dataFeriado;
     let diaExtracao;
     let mesExtracao;
