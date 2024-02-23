@@ -68,28 +68,15 @@ function gerarCalendario() {
     const feriadosMoveis = retornaFeriadosMoveis(data.getFullYear());
     const feriadosFixos = retornaFeriadosFixos();
 
-    const feriados = [
+    const listaDeFeriados = [
       ...feriadosFixos,
       ...feriadosMoveis
 
     ]
-
-    
-    // const feriados = [
-    //   '01/01', // Ano Novo
-    //   '01/05', // Dia do Trabalho
-    //   '25/07', // Dia Estadual da Consciencia Negra
-    //   '07/09', // Independência do Brasil
-    //   '12/10', // Dia de Nossa Senhora Aparecida
-    //   '15/10', // Dia da proclamação da república
-    //   '02/11', // Finados
-    //   '25/12',
-    // ...feriadosMoveis
-    // ];
   
    const dataFormatada = dateToStrDayMonth(data);
 
-    return feriados.includes(dataFormatada);
+    return listaDeFeriados.includes(dataFormatada);
   }  
 
   function dateToStrDayMonth( data ){
@@ -183,11 +170,11 @@ function gerarCalendario() {
     const feriadosFixos = [
       '01/01', // Ano Novo
       '01/05', // Dia do Trabalho
-      '25/07', // Dia Estadual da Consciencia Negra
       '07/09', // Independência do Brasil
       '12/10', // Dia de Nossa Senhora Aparecida
       '15/10', // Dia da proclamação da república
       '02/11', // Finados
+      '20/11', // Dia Nascional da Consciencia Negra
       '25/12' // Natal 
     ];
 
