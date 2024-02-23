@@ -125,27 +125,32 @@ function gerarCalendario() {
 
     //pascoa
     dataFeriado = domingoPascoa;
-    diaExtracao = dataFeriado.getDate().toString().padStart(2, '0'); // Adiciona um zero à esquerda se necessário
-    mesExtracao = (dataFeriado.getMonth() + 1).toString().padStart(2, '0'); // Adiciona um zero à esquerda se necessário    
-    pascoa = `${diaExtracao}/${mesExtracao}`;
+    //diaExtracao = dataFeriado.getDate().toString().padStart(2, '0'); // Adiciona um zero à esquerda se necessário
+    //mesExtracao = (dataFeriado.getMonth() + 1).toString().padStart(2, '0'); // Adiciona um zero à esquerda se necessário    
+    //pascoa = `${diaExtracao}/${mesExtracao}`;
+      pascoa = dateToStrDayMonth(dataFeriado);
 
     //Carnaval
     dataFeriado = new Date(domingoPascoa.getTime() - 47 * 24 * 60 * 60 * 1000);
-    diaExtracao = dataFeriado.getDate().toString().padStart(2, '0'); // Adiciona um zero à esquerda se necessário
-    mesExtracao = (dataFeriado.getMonth() + 1).toString().padStart(2, '0'); // Adiciona um zero à esquerda se necessário    
-    carnaval = `${diaExtracao}/${mesExtracao}`;
+    //diaExtracao = dataFeriado.getDate().toString().padStart(2, '0'); // Adiciona um zero à esquerda se necessário
+    //mesExtracao = (dataFeriado.getMonth() + 1).toString().padStart(2, '0'); // Adiciona um zero à esquerda se necessário    
+    //carnaval = `${diaExtracao}/${mesExtracao}`;
+      carnaval = dateToStrDayMonth(dataFeriado);
 
     // Sexta-feira Santa
     dataFeriado = new Date(domingoPascoa.getTime() - 2 * 24 * 60 * 60 * 1000); 
-    diaExtracao = dataFeriado.getDate().toString().padStart(2, '0'); // Adiciona um zero à esquerda se necessário
-    mesExtracao = (dataFeriado.getMonth() + 1).toString().padStart(2, '0'); // Adiciona um zero à esquerda se necessário    
-    sextaSanta = `${diaExtracao}/${mesExtracao}`;
+    //diaExtracao = dataFeriado.getDate().toString().padStart(2, '0'); // Adiciona um zero à esquerda se necessário
+    //mesExtracao = (dataFeriado.getMonth() + 1).toString().padStart(2, '0'); // Adiciona um zero à esquerda se necessário    
+    //sextaSanta = `${diaExtracao}/${mesExtracao}`;
+      sextaSanta = dateToStrDayMonth(dataFeriado);
 
     //Corpus Christi
     dataFeriado = new Date(domingoPascoa.getTime() + 60 * 24 * 60 * 60 * 1000); 
-    diaExtracao = dataFeriado.getDate().toString().padStart(2, '0'); // Adiciona um zero à esquerda se necessário
-    mesExtracao = (dataFeriado.getMonth() + 1).toString().padStart(2, '0'); // Adiciona um zero à esquerda se necessário    
-    corpus = `${diaExtracao}/${mesExtracao}`;
+    //diaExtracao = dataFeriado.getDate().toString().padStart(2, '0'); // Adiciona um zero à esquerda se necessário
+    //mesExtracao = (dataFeriado.getMonth() + 1).toString().padStart(2, '0'); // Adiciona um zero à esquerda se necessário    
+    //corpus = `${diaExtracao}/${mesExtracao}`;
+      corpus = dateToStrDayMonth(dataFeriado);
+
 
     const feriados = [
       '01/01', // Ano Novo
@@ -163,9 +168,17 @@ function gerarCalendario() {
     ];
   
     //const dataFormatada = `${data.getDate()}/${data.getMonth() + 1}`;
-   const dia = String(data.getDate()).padStart(2, '0');
-   const mes = String(data.getMonth() + 1).padStart(2, '0');
-   const dataFormatada = `${dia}/${mes}`;
+   //const dia = String(data.getDate()).padStart(2, '0');
+   //const mes = String(data.getMonth() + 1).padStart(2, '0');
+   //const dataFormatada = `${dia}/${mes}`;
+   const dataFormatada = dateToStrDayMonth(data);
 
     return feriados.includes(dataFormatada);
   }  
+
+  function dateToStrDayMonth( data){
+    const dia = String(data.getDate()).padStart(2, '0');
+   const mes = String(data.getMonth() + 1).padStart(2, '0');
+   return `${dia}/${mes}`;
+
+  }
