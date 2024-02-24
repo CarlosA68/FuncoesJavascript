@@ -65,14 +65,16 @@ function gerarCalendario() {
   
   function eFeriado(data) {
     
-    const feriadosMoveis = retornaFeriadosMoveis(data.getFullYear());
-    const feriadosFixos = retornaFeriadosFixos();
+    // const feriadosMoveis = retornaFeriadosMoveis(data.getFullYear());
+    // const feriadosFixos = retornaFeriadosFixos();
 
-    const listaDeFeriados = [
-      ...feriadosFixos,
-      ...feriadosMoveis
+    // const listaDeFeriados = [
+    //   ...feriadosFixos,
+    //   ...feriadosMoveis
 
-    ]
+    // ]
+
+    const listaDeFeriados = retornaFeriados(data.getFullYear());
   
    const dataFormatada = dateToStrDayMonth(data);
 
@@ -179,4 +181,17 @@ function gerarCalendario() {
     ];
 
     return feriadosFixos;
+  }
+
+  function retornaFeriados(ano){
+
+    const feriadosMoveis = retornaFeriadosMoveis(ano);
+    const feriadosFixos = retornaFeriadosFixos();
+
+    const listaDeFeriados = [
+      ...feriadosFixos,
+      ...feriadosMoveis
+
+    ]
+    return listaDeFeriados;
   }
