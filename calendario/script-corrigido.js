@@ -12,6 +12,8 @@ function gerarCalendario() {
     const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
     const hoje = new Date();
 
+    const listaDeFeriados = retornaFeriados(ano);
+
     for (let indiceMes = 0; indiceMes < meses.length; indiceMes++) {
       const nomeMes = meses[indiceMes];
       const diasNoMes = new Date(ano, indiceMes + 1, 0).getDate();
@@ -47,7 +49,7 @@ function gerarCalendario() {
           } else {
             celula.textContent = diaAtual;
             const dataAtual = new Date(ano, indiceMes, diaAtual);
-            if (diasHorizontal === 0 || dataAtual.getDay() === 0 || eFeriado(dataAtual) === true) {
+            if (diasHorizontal === 0 || dataAtual.getDay() === 0 || eFeriado(dataAtual, listaDeFeriados) === true) {
               celula.style.backgroundColor = 'red';
               celula.style.color = 'white';
               celula.style.fontWeight = 'bold';
@@ -63,18 +65,7 @@ function gerarCalendario() {
     }
   }
   
-  function eFeriado(data) {
-    
-    // const feriadosMoveis = retornaFeriadosMoveis(data.getFullYear());
-    // const feriadosFixos = retornaFeriadosFixos();
-
-    // const listaDeFeriados = [
-    //   ...feriadosFixos,
-    //   ...feriadosMoveis
-
-    // ]
-
-    const listaDeFeriados = retornaFeriados(data.getFullYear());
+  function eFeriado(data, listaDeFeriados) {
   
    const dataFormatada = dateToStrDayMonth(data);
 
