@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de Endereço</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Consulta de Endereço</h1>
+  <section id="consulta-cep">
+    <h2>Consultar Endereço por CEP</h2>
+    <form onsubmit="consultarPorCep(event)">
+      <label for="cep">CEP:</label>
+      <input type="text" id="cep" name="cep" placeholder="Digite o CEP">
+      <button type="submit">Consultar</button>
+    </form>
+    <div id="resultado-cep"></div>
+  </section>
+  <section id="consulta-endereco">
+    <h2>Consultar CEP por Endereço</h2>
+    <form onsubmit="consultarPorEndereco(event)">
+      <label for="logradouro">Logradouro:</label>
+      <input type="text" id="logradouro" name="logradouro" placeholder="Digite o Logradouro">
+      <label for="bairro">Bairro:</label>
+      <input type="text" id="bairro" name="bairro" placeholder="Digite o Bairro">
+      <label for="localidade">Localidade:</label>
+      <input type="text" id="localidade" name="localidade" placeholder="Digite a Localidade">
+      <label for="uf">UF:</label>
+      <input type="text" id="uf" name="uf" placeholder="Digite a UF">
+      <button type="submit">Consultar</button>
+    </form>
+    <div id="resultado-endereco"></div>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
