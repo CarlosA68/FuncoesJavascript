@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Consulta ViaCEP</title>
+</head>
+
+<body>
+  <h1>Consulta de CEP</h1>
+  <label for="cepInput">Digite o CEP:</label>
+  <input type="text" id="cepInput" placeholder="Digite o CEP">
+  <button onclick="consultarPorCEP()">Consultar por CEP</button>
+
+  <label for="enderecoInput">Digite o Endereço:</label>
+  <input type="text" id="enderecoInput" placeholder="Digite o Endereço">
+  <button onclick="consultarPorEndereco()">Consultar por Endereço</button>
+
+  <div id="resultado"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html> 
